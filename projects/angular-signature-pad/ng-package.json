@@ -7,5 +7,7 @@
       "signature_pad": "SignaturePadNative"
     }
   },
-  "whitelistedNonPeerDependencies": ["signature_pad"]
+  "whitelistedNonPeerDependencies": [
+    "signature_pad"
+  ]
 }
