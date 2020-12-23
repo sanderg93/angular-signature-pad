@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { SignaturePad } from './angular-signature-pad.component';
+import { SignaturePadComponent } from './angular-signature-pad.component';
 
 @NgModule({
-  declarations: [SignaturePad],
+  declarations: [SignaturePadComponent],
   imports: [],
-  exports: [SignaturePad],
+  exports: [SignaturePadComponent],
 })
-export class AngularSignaturePadModule {}
+export class AngularSignaturePadModule {
+}
