@@ -1,6 +1,10 @@
 {
   "name": "@almothafar/angular-signature-pad",
   "version": "3.0.0-beta.4",
+  "scripts": {
+    "build": "ng-packagr -p package.json",
+    "build:prod": "rimraf dist && ng build angular-signature-pad --prod"
+  },
   "description": "Angular Component wrapper for szimek / signature_pad",
   "repository": {
     "type": "git",
@@ -12,7 +16,10 @@
     "finger",
     "canvas"
   ],
-  "author": "Al-Mothafar Al-Hasan <almothafar@gmail.com> (https://almothafar.com)",
+  "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
+  "maintainers": [
+    "Al-Mothafar Al-Hasan <almothafar@gmail.com> (https://almothafar.com)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/almothafar/angular-signature-pad/issues"
