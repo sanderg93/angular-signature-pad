@@ -1,6 +1,6 @@
 {
   "name": "@almothafar/angular-signature-pad",
-  "version": "3.0.0-beta.4",
+  "version": "3.0.0-beta.5",
   "scripts": {
     "build": "ng-packagr -p package.json",
     "build:prod": "rimraf dist && ng build angular-signature-pad --prod"
@@ -16,10 +16,7 @@
     "finger",
     "canvas"
   ],
-  "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
-  "maintainers": [
-    "Al-Mothafar Al-Hasan <almothafar@gmail.com> (https://almothafar.com)"
-  ],
+  "author": "Al-Mothafar Al-Hasan <almothafar@gmail.com> (https://almothafar.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/almothafar/angular-signature-pad/issues"
