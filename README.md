@@ -16,7 +16,7 @@ API is identical to [szimek/signature_pad](https://www.npmjs.com/package/signatu
 Options are as per [szimek/signature_pad](https://www.npmjs.com/package/signature_pad) with the following additions:
 * canvasWidth: width of the canvas (px)
 * canvasHeight: height of the canvas (px)
-The above options are provided to avoid accessing the DOM directly from your component to adjust the canvas size.
+  The above options are provided to avoid accessing the DOM directly from your component to adjust the canvas size.
 
 ```typescript
 
@@ -36,20 +36,21 @@ import { SignaturePadModule } from '@almothafar/angular-signature-pad';
 // then import for use in a component
 
 import { Component, ViewChild } from '@angular/core';
-import { SignaturePad } from '@almothafar/angular-signature-pad';
+import { SignaturePadComponent } from '@almothafar/angular-signature-pad';
 
 @Component({
-  template: '<signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>'
+  template: '<signature-pad #signature [options]="signaturePadOptions" (drawStart)="drawStart($event)" (drawEnd)="drawComplete($event)"></signature-pad>'
 })
 
 export class SignaturePadPage {
 
-  @ViewChild(SignaturePad) signaturePad: SignaturePad;
+  @ViewChild('signature')
+  public signaturePad: SignaturePadComponent;
 
-  private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
-    'minWidth': 5,
-    'canvasWidth': 500,
-    'canvasHeight': 300
+  private signaturePadOptions: NgSignaturePadOptions = { // passed through to szimek/signature_pad constructor
+    minWidth: 5,
+    canvasWidth: 500,
+    canvasHeight: 300
   };
 
   constructor() {
@@ -62,14 +63,15 @@ export class SignaturePadPage {
     this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
   }
 
-  drawComplete() {
+  drawComplete(event: MouseEvent | Touch) {
     // will be notified of szimek/signature_pad's onEnd event
+    console.log('Completed drawing', event);
     console.log(this.signaturePad.toDataURL());
   }
 
-  drawStart() {
+  drawStart(event: MouseEvent | Touch) {
     // will be notified of szimek/signature_pad's onBegin event
-    console.log('begin drawing');
+    console.log('Start drawing', event);
   }
 }
 ```
