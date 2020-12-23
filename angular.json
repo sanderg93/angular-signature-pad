@@ -36,11 +36,16 @@
               "projects/angular-signature-pad/tsconfig.lib.json",
               "projects/angular-signature-pad/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "angular-signature-pad"
+  "defaultProject": "angular-signature-pad",
+  "cli": {
+    "analytics": "6e1c7da0-5e0a-4d7a-a68c-bcf04ef3cc04"
+  }
 }
