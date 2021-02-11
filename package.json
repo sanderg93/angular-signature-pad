@@ -13,25 +13,25 @@
     "e2e": "ng e2e"
   },
   "dependencies": {
-    "@angular/animations": "~11.0.7",
-    "@angular/common": "~11.0.7",
-    "@angular/compiler": "~11.0.7",
-    "@angular/core": "~11.0.7",
-    "@angular/forms": "~11.0.7",
-    "@angular/platform-browser": "~11.0.7",
-    "@angular/platform-browser-dynamic": "~11.0.7",
-    "@angular/router": "~11.0.7",
+    "@angular/animations": "~11.2.0",
+    "@angular/common": "~11.2.0",
+    "@angular/compiler": "~11.2.0",
+    "@angular/core": "~11.2.0",
+    "@angular/forms": "~11.2.0",
+    "@angular/platform-browser": "~11.2.0",
+    "@angular/platform-browser-dynamic": "~11.2.0",
+    "@angular/router": "~11.2.0",
     "rxjs": "~6.6.3",
     "signature_pad": "^3.0.0-beta.4",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1100.6",
-    "@angular/cli": "~11.0.6",
-    "@angular/compiler-cli": "~11.0.7",
-    "@types/jasmine": "~3.6.2",
-    "@types/node": "^14.14.20",
+    "@angular-devkit/build-angular": "~0.1101.4",
+    "@angular/cli": "~11.1.4",
+    "@angular/compiler-cli": "~11.2.0",
+    "@types/jasmine": "~3.6.3",
+    "@types/node": "^14.14.25",
     "@types/signature_pad": "^2.3.1",
     "codelyzer": "^6.0.1",
     "jasmine-core": "~3.6.0",
@@ -41,11 +41,11 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.1",
     "karma-jasmine-html-reporter": "^1.5.4",
-    "ng-packagr": "^11.0.3",
+    "ng-packagr": "^11.2.0",
     "protractor": "~7.0.0",
     "rimraf": "~3.0.2",
     "ts-node": "~9.1.1",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "typescript": "~4.1.5"
   }
 }
