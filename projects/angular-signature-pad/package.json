@@ -1,6 +1,6 @@
 {
   "name": "@almothafar/angular-signature-pad",
-  "version": "3.0.0-beta.6",
+  "version": "3.0.0-beta.7",
   "scripts": {
     "build": "ng-packagr -p package.json",
     "build:prod": "rimraf dist && ng build angular-signature-pad --prod"
@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/almothafar/angular-signature-pad#readme",
   "peerDependencies": {
-    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0",
-    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0"
+    "@angular/common": "^10.0.0 || ^11.0.0 || ^12.0.0",
+    "@angular/core": "^10.0.0 || ^11.0.0 || ^12.0.0"
   },
   "dependencies": {
     "signature_pad": "~3.0.0-beta.4"
