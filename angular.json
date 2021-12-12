@@ -30,14 +30,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/angular-signature-pad/tsconfig.lib.json",
-              "projects/angular-signature-pad/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/angular-signature-pad/**/*.ts",
+              "projects/angular-signature-pad/**/*.html"
             ]
           }
         }
@@ -46,6 +43,7 @@
   },
   "defaultProject": "angular-signature-pad",
   "cli": {
-    "analytics": "6e1c7da0-5e0a-4d7a-a68c-bcf04ef3cc04"
+    "analytics": "6e1c7da0-5e0a-4d7a-a68c-bcf04ef3cc04",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }

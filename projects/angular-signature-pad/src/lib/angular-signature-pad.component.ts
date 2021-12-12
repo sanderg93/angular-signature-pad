@@ -14,6 +14,8 @@ export interface NgSignaturePadOptions extends Options {
 export class SignaturePadComponent implements AfterContentInit, OnDestroy {
   @Input() public options: NgSignaturePadOptions;
   @Output() public drawStart: EventEmitter<MouseEvent | Touch>;
+  @Output() public drawBeforeUpdate: EventEmitter<MouseEvent | Touch>;
+  @Output() public drawAfterUpdate: EventEmitter<MouseEvent | Touch>;
   @Output() public drawEnd: EventEmitter<MouseEvent | Touch>;
 
   private signaturePad: SignaturePad;
@@ -35,8 +37,10 @@ export class SignaturePadComponent implements AfterContentInit, OnDestroy {
     }
 
     this.signaturePad = new SignaturePad(canvas, this.options);
-    this.signaturePad.onBegin = this.onBegin.bind(this);
-    this.signaturePad.onEnd = this.onEnd.bind(this);
+    this.signaturePad.addEventListener('beginStroke', (event: CustomEvent) => this.beginStroke(event.detail));
+    this.signaturePad.addEventListener('beforeUpdateStroke', (event: CustomEvent) => this.beforeUpdateStroke(event.detail));
+    this.signaturePad.addEventListener('afterUpdateStroke', (event: CustomEvent) => this.afterUpdateStroke(event.detail));
+    this.signaturePad.addEventListener('endStroke', (event: CustomEvent) => this.endStroke(event.detail));
   }
 
   public ngOnDestroy(): void {
@@ -148,14 +152,22 @@ export class SignaturePadComponent implements AfterContentInit, OnDestroy {
   /**
    * notify subscribers on signature begin
    */
-  public onBegin(event: MouseEvent | Touch): void {
+  public beginStroke(event: MouseEvent | Touch): void {
     this.drawStart.emit(event);
+  }
+
+  public beforeUpdateStroke(event: MouseEvent | Touch): void {
+    this.drawBeforeUpdate.emit(event);
+  }
+
+  public afterUpdateStroke(event: MouseEvent | Touch): void {
+    this.drawAfterUpdate.emit(event);
   }
 
   /**
    * notify subscribers on signature end
    */
-  public onEnd(event: MouseEvent | Touch): void {
+  public endStroke(event: MouseEvent | Touch): void {
     this.drawEnd.emit(event);
   }
 
