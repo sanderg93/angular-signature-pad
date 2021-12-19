@@ -23,6 +23,8 @@ export class SignaturePadComponent implements AfterContentInit, OnDestroy {
   constructor(private elementRef: ElementRef) {
     this.options = this.options || {} as NgSignaturePadOptions;
     this.drawStart = new EventEmitter<MouseEvent | Touch>();
+    this.drawBeforeUpdate = new EventEmitter<MouseEvent | Touch>();
+    this.drawAfterUpdate = new EventEmitter<MouseEvent | Touch>();
     this.drawEnd = new EventEmitter<MouseEvent | Touch>();
   }
 
